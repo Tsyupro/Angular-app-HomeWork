@@ -1,0 +1,18 @@
+<p>Ціна: {{ price | currency:'UAH':'₴':'.2' }}</p>
+<p>Знижка: {{ discount | percent:'.0' }}</p>
+
+<div *ngIf="isLoggedIn">Доброго дня, {{ userName }}</div>
+
+<div [ngSwitch]="status">
+    <p *ngSwitchCase="'active'">Ваш обліковий запис активний.</p>
+    <p *ngSwitchCase="'inactive'">Ваш обліковий запис неактивний.</p>
+    <p *ngSwitchDefault>Статус вашого облікового запису не визначено.</p>
+  </div>
+  
+  <ul>
+    <li *ngFor="let user of users">{{ user.name }} ({{ user.age }} років)</li>
+  </ul>
+
+  
+  
+
